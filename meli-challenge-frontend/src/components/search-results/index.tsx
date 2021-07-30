@@ -12,6 +12,7 @@ const SearchResults = (props: any) => {
     const handleSearchSubmit = (value: string) => {
         props.history.push({ pathname: "/items", search: `?search=${value}` });
     };
+
     const location = useLocation();
 
     const searchItems = async () => {
@@ -50,7 +51,7 @@ const SearchResults = (props: any) => {
                     <Link 
                         key={i.id}
                         to={{ pathname: `/items/${i.id}`, state: { data: i } }}
-                        >
+                    >
                         <ItemResult item= {i}/>
                     </Link>)
                 }) :

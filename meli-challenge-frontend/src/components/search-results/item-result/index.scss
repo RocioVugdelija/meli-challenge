@@ -6,7 +6,6 @@
     grid-gap: 300px;
     grid-template-columns: 700px 198px;
     padding: 20px;
-
     .item-data {
         display: inline-flex;
         .item-image{
@@ -28,7 +27,12 @@
                 margin-bottom: 10px;
                 font-weight: 500;
                 font-size: 24px;
-
+                .price-decimals{
+                    display: inline;
+                    font-size: 12px;
+                    vertical-align:top;
+                    color: $dark-gray-3;
+                }
                 img{
                     margin-left: 10px;
                 }

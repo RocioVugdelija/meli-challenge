@@ -11,6 +11,7 @@ export const Breadcrumb = ({categories}: PropTypes) => {
     const isLastCategory = (index: number) => (
         categories && index === (categories.length-1)
     );
+    
     const greaterThan = ">";
 
     return (

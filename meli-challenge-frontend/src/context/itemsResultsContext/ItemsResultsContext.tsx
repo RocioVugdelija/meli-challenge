@@ -59,6 +59,7 @@ export const ItemsResultsProvider = ({children}: any) => {
     const cleanCategories = () => {
         dispatch({type: 'cleanCategories'});
     };
+    
     return(
         <ItemsResultsContext.Provider value={{
             ...state,

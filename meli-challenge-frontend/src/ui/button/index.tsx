@@ -6,7 +6,6 @@ interface PropTypes {
 }
 
 export const Button = (props: PropTypes) => {
-    
     const { onClick, text } = props;
 
     const handleSubmit = (e: any) => {

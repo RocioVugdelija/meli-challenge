@@ -23,8 +23,6 @@ const ItemDetails = (props: any) => {
         getItemDetails(id);
     };
 
-
-  
     useEffect(() => {
       searchItem();
     }, [props.match.params.id]);
@@ -41,6 +39,7 @@ const ItemDetails = (props: any) => {
             cleanCategories();
         };
     }, []);
+
     const handleSearchSubmit = (value: string) => {
         props.history.push({ pathname: "/items", search: `?search=${value}` });
     };
@@ -51,6 +50,9 @@ const ItemDetails = (props: any) => {
         alert("Not Implemented");
     }
 
+    const getFormattedDecimals = (decimals?: number) => {
+        return (decimals && decimals < 10? `0${decimals}`: decimals);
+    }
     return (
         <div>
             <Header onSearchSubmit={handleSearchSubmit}/>
@@ -70,7 +72,7 @@ const ItemDetails = (props: any) => {
                                     {getSymbolFromCurrencyCode(item.price.currency)} {getFormattedPrice(item.price.amount)}
                                 </span>
                                 <span className="price-decimals">
-                                    {item.price.decimals || "00"}
+                                    {getFormattedDecimals(item.price.decimals) || "00"}
                                 </span>
                             </span>
                             <Button onClick={handleClick} text="Comprar" />
