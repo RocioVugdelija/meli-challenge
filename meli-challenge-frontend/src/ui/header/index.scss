@@ -1,0 +1,12 @@
+@import "../../colors/index.scss";
+
+.ui-header {
+    background: $yellow;
+    height: 60px;
+    .ui-header-content{
+        display: flex;
+        width: 1200px;
+        margin: 0 auto;
+        padding: 8px 1px;
+    }
+}

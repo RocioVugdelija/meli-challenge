@@ -1,0 +1,17 @@
+@import '../../colors/index.scss';
+
+.ui-breadcrumb{
+    width: 1200px;
+    margin: 15px auto;
+    span{
+        color: $gray-breadcrumb;
+        font-weight: 500;
+        &.last-category{
+            font-weight: 700;
+        }
+        span{
+            margin-right: 6px;
+
+        }
+    }
+}

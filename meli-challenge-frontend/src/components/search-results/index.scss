@@ -1,0 +1,19 @@
+@import "../../colors/index.scss";
+
+.items-container {
+    background-color: $white;
+    width: 1200px;
+    margin: 0 auto;
+    min-height: 204px;
+    border-radius: 4px;
+    > h3 {
+        font-size: 24px; 
+        font-weight: 600;
+        line-height: 1.08;
+        text-align: center;
+        padding-top: 90px;
+    }
+    a {
+        text-decoration: none;
+    }
+}

@@ -1,0 +1,37 @@
+@import "./../../colors/index.scss";
+
+.ui-search{
+    width: 1147px;
+    margin-left: 25px;
+    position: relative;
+    .ui-search-input{
+        height: 39px;
+        width: 1107px;
+        font-size: 16px;
+        margin:0;
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
+        border: 0 $gray-border;
+        -webkit-box-shadow: 0 1px 2px 0 $gray-border;
+        box-shadow: 0 1px 2px 0 $gray-border;
+        padding: 0 0 0 15px;
+        outline: none;
+        &::placeholder{
+            color: $gray-subtitle;
+        }
+    }
+    .ui-search-btn{
+        height: 39px;
+        width: 39px;
+        padding: 0;
+        margin:0;
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
+        border: 0 $gray-border;
+        -webkit-box-shadow: 0 1px 2px 0 $gray-border;
+        box-shadow: 0 1px 2px 0 $gray-border;
+        outline: none;
+        position: absolute;
+        right: 0;
+    }
+}

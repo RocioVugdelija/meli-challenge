@@ -1,0 +1,71 @@
+@import "../../colors/index.scss";
+
+.item-container {
+    background-color: $white;
+    width: 1200px;
+    margin: 0 auto;
+    min-height: 204px;
+    border-radius: 4px;
+    .item-data{
+        display: grid;
+        grid-template-columns: 810px 260px;
+        grid-gap: 50px;
+        margin: 0 40px 40px 40px;
+        padding-top: 20px;
+        .item-info{
+            .item-name{
+                font-size: 24px;
+                color: $dark-gray;
+            }
+            .item-condition{
+                font-size: 14px;
+                color: $dark-gray;
+            }
+            .price-container{
+                .price{
+                    font-size: 46px;
+                    line-height: 46px;
+                    color: $dark-gray;
+                }
+                .price-decimals{
+                    font-size: 23px;
+                    vertical-align:top;
+                    color: $dark-gray-3;
+                }
+            }
+            .ui-button{
+                width: 100%;
+                background-color: $blue;
+                color: $white;
+                border-radius: 6px;
+                height: 40px;
+                border-color: transparent;
+                font-size: 18px;
+                font-family: Arial, Helvetica, sans-serif;
+                margin-top: 50px;
+                cursor: pointer;
+            }
+        }
+        .item-image{
+            img{
+                width: 100%;
+                height: auto;
+                border-radius: 4px;
+            }
+        }        
+    }
+    .item-description{
+        margin-left: 40px;
+        margin-bottom: 80px;
+        width: 860px;
+        overflow: hidden;
+        padding-bottom: 40px;
+        color: $medium-gray-2;
+        font-size: 16px;
+        h3{
+            font-weight: 400;
+            color: $dark-gray;
+            font-size: 30px;
+        }
+    }
+}

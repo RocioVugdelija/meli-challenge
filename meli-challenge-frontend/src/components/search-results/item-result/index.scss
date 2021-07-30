@@ -1,0 +1,48 @@
+@import "../../../colors/index.scss";
+
+.item-result{
+    display: grid;
+    width: 1200px;
+    grid-gap: 300px;
+    grid-template-columns: 700px 198px;
+    padding: 20px;
+
+    .item-data {
+        display: inline-flex;
+        .item-image{
+            width: 180px;
+            height: 180px;
+            img{
+                width: 180px;
+                height: 180px;
+                border-radius: 4px;
+            }
+        }
+        .item-info {
+            margin-top: 20px;
+            margin-left: 20px;
+            span {
+                display: block;
+            }
+            .price {
+                margin-bottom: 10px;
+                font-weight: 500;
+                font-size: 24px;
+
+                img{
+                    margin-left: 10px;
+                }
+            }
+            .item-name{
+                font-size: 16px;
+            }
+        }
+    }
+    .item-adress_state {
+        margin-top: 30px;
+        font-size: 12px;
+        color: $gray-subtitle;
+        font-weight: 500;
+    }
+
+}
