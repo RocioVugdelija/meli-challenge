@@ -11,33 +11,33 @@ app.use(cors());
 
 // Search all items
 app.get("/api/items", async (req, res) => {
-  try{
       const query = req.query.q?.toString();
       if (query){
-        const {data} = await getSearchResultsData(query);
-        const categoryData  = data.filters.find((f) => f.id ==="category") || data.available_filters.find((f) => f.id ==="category");
-        if (!categoryData) {
-          throw new TypeError('The categories were not found'); //this is just for typescript
+        try {
+          const {data} = await getSearchResultsData(query);
+          const categoryData  = data.filters.find((f) => f.id ==="category") || data.available_filters.find((f) => f.id ==="category");
+          if (!categoryData) {
+            throw new TypeError('The categories were not found'); //this is just for typescript
+          }
+          const categoryID = getCategoryIdWithMaxResults(categoryData?.values);
+          const categoriesResponse = await getCategoriesData(categoryID);
+          const categories = categoriesResponse.data.path_from_root.map((c) => c.name)
+          const items = mapItemsResults(data);
+          res.json({
+            author: getAuthor(),
+            categories: categories,
+            items: items,
+          });
+        } catch {
+          res.status(httpStatus.NOT_FOUND).send({
+            message: "Ha habido un error en la búsqueda"
+          });
         }
-        const categoryID = getCategoryIdWithMaxResults(categoryData?.values);
-        const categoriesResponse = await getCategoriesData(categoryID);
-        const categories = categoriesResponse.data.path_from_root.map((c) => c.name)
-        const items = mapItemsResults(data);
-        res.json({
-          author: getAuthor(),
-          categories: categories,
-          items: items,
-        });
       } else{
-        res.status(httpStatus.PRECONDITION_FAILED).send({
-          message: "Ha habido un problema con la query"
+        res.status(httpStatus.BAD_REQUEST).send({
+          message: "Ha habido un error con la query"
         });
       }
-  } catch {
-      res.status(httpStatus.NOT_FOUND).send({
-        message: "Ha habido un error en la búsqueda"
-      });
-  }
 });
 
 // Search one item details
