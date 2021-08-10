@@ -1,8 +1,8 @@
 import React from 'react'
 import { Header } from '../../ui/header'
-import { withRouter } from 'react-router-dom';
+import { RouteComponentProps, withRouter } from 'react-router-dom';
 
-const Home = (props: any) => {
+const Home = (props: RouteComponentProps) => {
 
     const handleSearchSubmit = (value: string) => {
         props.history.push({ pathname: "/items", search: `?search=${value}` });

@@ -1,12 +1,12 @@
 import React, { useContext, useEffect } from 'react';
-import { Link, useLocation, withRouter } from 'react-router-dom';
+import { Link, RouteComponentProps, useLocation, withRouter } from 'react-router-dom';
 import { Header } from '../../ui/header';
 import { ItemsResultsContext } from '../../context/itemsResultsContext/ItemsResultsContext';
 import ItemResult  from './item-result';
 import './index.scss';
 import { Breadcrumb } from '../../ui/breadcrumb';
 
-const SearchResults = (props: any) => {
+const SearchResults = (props: RouteComponentProps) => {
     const { cleanItems, cleanCategories, getItemsResults, categories, errorMessage, items } = useContext( ItemsResultsContext );
 
     const handleSearchSubmit = (value: string) => {

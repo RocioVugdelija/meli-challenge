@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import { withRouter } from 'react-router-dom';
+import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { Header } from '../../ui/header'
 import { ItemDetailsContext } from '../../context/itemDetailsContext/ItemDetailsContext';
 
@@ -8,7 +8,14 @@ import getSymbolFromCurrencyCode from '../utils/currency';
 import { Button } from '../../ui/button';
 import { Breadcrumb } from '../../ui/breadcrumb';
 
-const ItemDetails = (props: any) => {
+interface MatchParams {
+    id: string;
+}
+
+interface PropTypes extends RouteComponentProps<MatchParams> {
+}
+
+const ItemDetails = (props: PropTypes) => {
     const { cleanItem, cleanCategories, errorMessage , getItemDetails, categories, item } = useContext( ItemDetailsContext );
 
     const redirectToSearchBox = () => {

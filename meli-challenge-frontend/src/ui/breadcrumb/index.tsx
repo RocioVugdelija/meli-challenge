@@ -18,7 +18,7 @@ export const Breadcrumb = ({categories}: PropTypes) => {
         <div className="ui-breadcrumb">
             {categories && categories.map((c,index) => {
                 return (
-                    <span>
+                    <span key={index}>
                         <span className={isLastCategory(index)? "last-category" : "category" }>{c} </span>
                         {!isLastCategory(index) && (
                             <span>{greaterThan}</span>

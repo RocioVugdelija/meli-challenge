@@ -1,11 +1,17 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom';
+import { RouteComponentProps, withRouter } from 'react-router-dom';
+import { ItemResult as ItemResultType } from '../../../interfaces/ItemsResponsesInterfaces';
 import getSymbolFromCurrencyCode from '../../utils/currency';
 
 import './index.scss';
 
-const ItemResult = (props: any) => {
-    const {item }  = props;
+interface PropTypes extends RouteComponentProps{
+    item: ItemResultType;
+}
+
+const ItemResult = (props: PropTypes) => {
+
+    const { item } = props;
 
     const price = item.price.amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
 

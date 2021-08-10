@@ -6,7 +6,8 @@ import { Filter, MeliSearchResponse } from "./interfaces/meli-api-responses/sear
 import meliApi from "./meliApi";
 
 export const getSearchResultsData = async(query: string) => {
-  const resp = await meliApi.get<MeliSearchResponse>(`sites/MLA/search?limit=4&q=${query}`);
+  const parsedQuery= query.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+  const resp = await meliApi.get<MeliSearchResponse>(`sites/MLA/search?limit=4&q=${parsedQuery}`);
   return resp;
 };
   
